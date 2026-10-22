@@ -1,0 +1,101 @@
+{
+ "b2b-dock-loading": {
+  "focalX": 0.225
+ },
+ "b2b-isometric": {
+  "focalX": 0.282
+ },
+ "b2c-doorstep": {
+  "focalX": 0.305
+ },
+ "b2c-packing": {
+  "focalX": 0.225
+ },
+ "bg-dark-gradient": {
+  "focalX": 0.245
+ },
+ "capabilities-abstract": {
+  "focalX": 0.657
+ },
+ "contact-night": {
+  "focalX": 0.225
+ },
+ "docks-air": {
+  "focalX": 0.748
+ },
+ "facility-exterior": {
+  "focalX": 0.517
+ },
+ "forklift-signage": {
+  "focalX": 0.316
+ },
+ "growth-abstract": {
+  "focalX": 0.225
+ },
+ "help-matrix-bg": {
+  "focalX": 0.337
+ },
+ "intl-air-sea": {
+  "focalX": 0.23
+ },
+ "intl-scope": {
+  "focalX": 0.65
+ },
+ "managed-dark": {
+  "focalX": 0.397
+ },
+ "managed-handover": {
+  "focalX": 0.569
+ },
+ "method-bg": {
+  "focalX": 0.526
+ },
+ "pallet-dark": {
+  "focalX": 0.225
+ },
+ "promise-abstract": {
+  "focalX": 0.278
+ },
+ "quality-seal": {
+  "focalX": 0.342
+ },
+ "readiness-worker": {
+  "focalX": 0.306
+ },
+ "road-horizon": {
+  "focalX": 0.225
+ },
+ "road-truck-highway": {
+  "focalX": 0.225
+ },
+ "road-trucks-mountain": {
+  "focalX": 0.367
+ },
+ "scale-boxes": {
+  "focalX": 0.335
+ },
+ "sectors-boxes": {
+  "focalX": 0.725
+ },
+ "services-truck-sunset": {
+  "focalX": 0.225
+ },
+ "team-tablet": {
+  "focalX": 0.5
+ },
+ "vision2030-riyadh": {
+  "focalX": 0.225
+ },
+ "warehouse-racks": {
+  "focalX": 0.318
+ },
+ "warehouse-tablet": {
+  "focalX": 0.225
+ },
+ "why-pinwheel": {
+  "focalX": 0.391
+ },
+ "why-waves": {
+  "focalX": 0.225
+ }
+}
