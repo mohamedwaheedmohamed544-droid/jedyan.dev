@@ -1,0 +1,91 @@
+.section { overflow: clip; }
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line-dark);
+  border-block: 1px solid var(--line-dark);
+}
+.section:is(.paper, .white, .tint) .grid { background: var(--line-light); border-color: var(--line-light); }
+
+.item {
+  position: relative;
+  padding: clamp(24px, 4vw, 44px) clamp(16px, 2.4vw, 32px);
+  background: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  isolation: isolate;
+}
+/* each cell paints the section ground so the 1px gap reads as a rule */
+.item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--cell, transparent);
+}
+.section.dark .item::before { background: var(--ink); }
+.section.graphite .item::before { background: var(--graphite); }
+.section.paper .item::before { background: var(--paper); }
+.section.white .item::before { background: var(--white); }
+.section.tint .item::before { background: var(--tint); }
+
+/* a thin accent that grows as the figure counts up */
+.item::after {
+  content: "";
+  position: absolute;
+  inset-block-start: -1px;
+  inset-inline-start: 0;
+  height: 2px;
+  width: 0;
+  background: var(--orange);
+  transition: width 900ms var(--ease-out) calc(var(--d, 0) * 1ms);
+}
+.item[data-in]::after { width: 100%; }
+
+.value {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  line-height: 1;
+  font-size: clamp(2rem, 1.1rem + 2.6vw, 3.4rem);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.num { color: inherit; }
+.suffix { font-size: 0.45em; color: var(--orange); letter-spacing: 0; }
+
+.label {
+  margin: 0;
+  font-size: var(--fs-caption);
+  line-height: 1.5;
+  opacity: 0.78;
+}
+.note { margin: 0; font-size: 0.75rem; opacity: 0.55; }
+
+.chip {
+  margin-top: 6px;
+  align-self: flex-start;
+  font-size: 0.6875rem;
+  letter-spacing: 0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px dashed currentColor;
+  opacity: 0.4;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .grid { grid-template-columns: 1fr; }
+  .item { padding-block: 22px; }
+}

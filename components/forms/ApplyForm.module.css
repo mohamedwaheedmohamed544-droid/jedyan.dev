@@ -1,0 +1,54 @@
+.form { display: grid; gap: 24px; max-width: 900px; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 22px; }
+.full { grid-column: 1 / -1; }
+
+.form label { display: grid; gap: 8px; }
+.form label > span { font-size: var(--fs-caption); opacity: 0.75; }
+.form label i { color: var(--orange); font-style: normal; }
+
+.form input,
+.form textarea {
+  font: inherit;
+  font-size: 1rem;
+  padding: 13px 15px;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--line-light);
+  border-radius: 10px;
+  transition: border-color 200ms ease, background 200ms ease;
+  resize: vertical;
+}
+:global(.section.dark) .form input,
+:global(.section.graphite) .form input,
+:global(.section.dark) .form textarea,
+:global(.section.graphite) .form textarea { border-color: var(--line-dark); background: rgba(255, 255, 255, 0.04); }
+.form input:focus,
+.form textarea:focus { outline: none; border-color: var(--orange); }
+
+/* honeypot — hidden without pushing the document's scroll width (an off-screen offset
+   adds thousands of pixels of horizontal overflow in an RTL document) */
+.hp {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.err { margin: 0; color: var(--orange-deep); font-size: var(--fs-caption); }
+
+.done { display: grid; gap: 10px; max-width: 54ch; animation: rise 520ms var(--ease-out) both; }
+.mark { width: 38px; height: 3px; background: var(--orange); }
+.done h3 { margin: 0; font-size: var(--fs-h3); font-weight: 600; }
+.done p { margin: 0; opacity: 0.7; line-height: 1.75; }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 680px) {
+  .grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .done { animation: none; } }
